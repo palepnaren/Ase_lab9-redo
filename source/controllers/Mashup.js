@@ -37,7 +37,7 @@ angular.module('Mash', [])
                 handler.success(function (result) {
 					console.log(result);
                     if (result != null&&result.docSentiment!==null) {
-                        //This is the Alchemy API for getting the sentiment of the most recent review for a place.
+                        
                                 $scope.ReviewWithSentiment = {
                                                             "sentiment":result.docSentiment.type,
                                                              "score":result.docSentiment.score  };
