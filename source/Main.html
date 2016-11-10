@@ -1,0 +1,84 @@
+<!doctype html>
+<html ng-app="Mash">
+
+<head >
+ <title>Mashup App!</title>
+
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjW-xyIUZzV4V9pv4wrqARGNKuwrju5y8&libraries=places&v=3.exp"></script>
+<div class="page-header" align="center">A simple MashUp of two Api's.</div>
+</head>
+<body ng-controller="View1Ctrl">
+  <div class="wrapper">
+   <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-4 col-md-offset-4 panel panel-default">
+  <div ng-view >
+
+    <div   class="left">
+
+     <form class="form-group" align="center">
+     <p><b>Enter the text to be translate: </b><input type="text"  class="form-control input-lg" ng-model = "Text" id = "Text"  placeholder="enter text here">
+       <br/>
+        <button type= "submit" class="btn btn-primary" value ="Text" ng-click="translate()">Hit me</button>
+      </p>
+    </form>
+   <p>The language will be converted from english to italian.</p>
+      <div id="div_VenueList">
+      <ul>
+             <li ng-if="result" style="font-size: x-large; color: #5e5e5e; text-align: center; list-style: none; list-style-position:inside;">
+                <a  href="" ng-click="sentiment(result)" style="font-size: x-large; color: #5e5e5e; text-align: center;"><p ng-bind="result"></p></a>
+              </li>
+            </ul>
+          </div>
+
+
+      <div id="div_ReviewList" style="display:none;"  >
+
+
+        <p ng-model="ReviewWithSentiment">
+
+
+   <h4> Here we will be showing you the sentimental analysis of the word you have typed.</h4>
+        <table class="table table-striped table-bordered table-hover">
+
+
+            <tr>
+        <td>
+     <b>sentiment:  </b>
+        </td>
+        <td>
+        {{ReviewWithSentiment.sentiment}}
+        </td>
+        </tr>
+        <tr>
+    <td>
+    <b>score:  </b>
+    </td>
+    <td>
+    {{ReviewWithSentiment.score}}
+    </td>
+    </tr>
+
+        </table>
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+    <script src="./scripts/angular.js"></script>
+       <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>-->
+        <script src="./controllers/Mashup.js"></script>
+      <!--  <script src="./factories/Maps_Factory.js"></script>
+      <script src="./factories/OpenWeather_Factory.js"></script>-->
+
+
+
+</body>
+</html>
