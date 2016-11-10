@@ -30,7 +30,7 @@ angular.module('Mash', [])
         }
         $scope.sentiment = function (text) {
             if (text != null) {
-                //This is the API call being made to get the reviews(tips) for the selected place or venue.
+                //This is the API call being made to get the sentiment analysis for the selected text.
                 var handler = $http.get("http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment" +
                     "?apikey=d0e7bf68cdda677938e6c186eaf2b755ef737cd8" +
                     "&outputMode=json&text=" +text);
